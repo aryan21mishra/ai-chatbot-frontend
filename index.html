@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChatBot</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body,
+      html {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body
+    class="w-full h-full bg-zinc-950 text-white flex flex-col overflow-hidden">
+    <!-- Header -->
+    <div
+      class="flex items-center justify-between px-6 py-4 border-b border-white/5 bg-zinc-950/80 backdrop-blur-md shrink-0">
+      <div class="flex items-center gap-2">
+        <div
+          class="w-7 h-7 rounded-lg bg-violet-600 flex items-center justify-center text-xs font-bold">
+          AI
+        </div>
+        <span class="font-semibold text-sm text-white tracking-wide"
+          >ChatBot</span
+        >
+      </div>
+      <div class="flex items-center gap-1.5">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="text-xs text-zinc-500">Online</span>
+      </div>
+    </div>
+
+    <!-- Chat Messages -->
+    <div class="flex-1 overflow-y-auto px-4 py-6" id="chatContainer">
+      <div class="max-w-2xl mx-auto flex flex-col gap-4"></div>
+    </div>
+
+    <!-- Input Bar -->
+    <div
+      class="shrink-0 border-t border-white/5 bg-zinc-950/80 backdrop-blur-md px-4 py-4">
+      <div
+        class="max-w-2xl mx-auto bg-zinc-900 border border-white/10 rounded-2xl overflow-hidden focus-within:border-violet-500/50 focus-within:ring-1 focus-within:ring-violet-500/20 transition-all duration-200">
+        <textarea
+          class="w-full resize-none outline-none p-4 bg-transparent text-white text-sm placeholder-zinc-600 leading-relaxed"
+          rows="2"
+          id="input"
+          placeholder="Send a message…"></textarea>
+        <div class="flex items-center justify-between px-3 pb-3">
+          <span class="text-xs text-zinc-600">Shift + Enter for new line</span>
+          <button
+            id="askButton"
+            class="flex items-center gap-2 bg-violet-600 hover:bg-violet-500 active:bg-violet-700 px-4 py-2 text-white rounded-xl cursor-pointer transition-all duration-200 text-sm font-medium">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-3.5 h-3.5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13" />
+              <polygon points="22 2 15 22 11 13 2 9 22 2" />
+            </svg>
+            Send
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
